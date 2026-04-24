@@ -1,0 +1,302 @@
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* ================= GLOBAL ================= */
+#app{
+  width:100%;
+  height:100vh;
+  position:relative;
+}
+
+.screen{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+
+  opacity:0;
+  transform:scale(1.08);
+  transition:all 1.2s ease;
+}
+
+.screen.active{
+  opacity:1;
+  transform:scale(1);
+  z-index:2;
+}
+
+.content{
+  z-index:2;
+}
+
+.center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ================= TYPOGRAPHY ================= */
+.title{
+  font-family:'Great Vibes';
+  font-size:48px;
+}
+
+.subtitle{
+  margin-top:15px;
+  font-size:14px;
+  opacity:0.7;
+}
+
+.section-title{
+  font-family:'Great Vibes';
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.glow{
+  text-shadow:0 0 20px #ff9, 0 0 40px #ff6;
+}
+
+/* ================= HERO ================= */
+#hero{
+  background:#000;
+}
+
+#heartCanvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+/* ================= WELCOME ================= */
+#welcome{
+  background:linear-gradient(135deg,#ffd1dc,#ff9aa2);
+}
+
+.welcome-text{
+  font-family:'Great Vibes';
+  font-size:60px;
+  color:#2c2c2c;
+}
+
+/* ================= STORY ================= */
+#story{
+  background:linear-gradient(#ffffff,#f0f0f0);
+  color:#333;
+}
+
+.story-box{
+  max-width:700px;
+  line-height:1.9;
+  font-size:18px;
+
+  background:rgba(255,255,255,0.8);
+  padding:30px;
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* ================= MEMORIES ================= */
+#memories{
+  background:#ffe4e1;
+  color:#222;
+}
+
+.memory-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.memory-grid img{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.4s;
+}
+
+.memory-grid img:hover{
+  transform:scale(1.1);
+}
+
+.memory-text{
+  margin-top:20px;
+  font-size:16px;
+}
+
+/* ================= LETTER ================= */
+#letter{
+  background:#e6d3b3;
+  color:#333;
+}
+
+.envelope{
+  font-size:60px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.envelope:hover{
+  transform:scale(1.2);
+}
+
+.letter-box{
+  display:none;
+  margin-top:20px;
+
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:20px;
+
+  max-width:600px;
+
+  font-family:'Great Vibes';
+  font-size:22px;
+
+  box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* ================= COUNTDOWN ================= */
+#countdown{
+  background:radial-gradient(circle,#ff758c,#ff7eb3);
+}
+
+#countdownTimer{
+  font-size:28px;
+  margin-top:10px;
+}
+
+/* ================= CELEBRATION ================= */
+#celebration{
+  background:black;
+}
+
+#fireworksCanvas{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+/* ================= PROPOSAL ================= */
+#proposal{
+  background:linear-gradient(45deg,#ff416c,#ff4b2b);
+}
+
+.proposal-title{
+  font-family:'Great Vibes';
+  font-size:48px;
+}
+
+.buttons{
+  margin-top:20px;
+}
+
+button{
+  padding:12px 28px;
+  margin:10px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+
+  background:white;
+  color:#ff416c;
+
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* ================= RESULT IMAGE ================= */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:1.5s ease;
+  z-index:999;
+}
+
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.result-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  animation:zoom 12s ease infinite alternate;
+}
+
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.05);}
+}
+
+/* ================= FINAL ================= */
+#final{
+  background:linear-gradient(#1a1a1a,#000);
+}
+
+.final-text{
+  font-size:20px;
+}
+
+/* ================= END ================= */
+#end{
+  background:#000;
+}
+
+.end-text{
+  font-family:'Great Vibes';
+  font-size:40px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:600px){
+
+  .title{font-size:36px;}
+  .welcome-text{font-size:40px;}
+  .section-title{font-size:32px;}
+
+  .memory-grid img{
+    width:120px;
+    height:160px;
+  }
+
+}
